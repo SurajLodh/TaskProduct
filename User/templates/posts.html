@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+
+<div>
+    {% if post_s %}
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" style="width:5%">ID</th>
+                    <th scope="col" style="width:10%">User</th>
+                    <th scope="col" style="width:30%">Test</th>
+                    <th scope="col" style="width:10%">Created</th>
+                    <th scope="col" style="width:10%">Updated</th>
+                </tr>
+            </thead>
+            {% for post in post_s %}
+                <tbody>
+                    <tr>
+                        <th>{{post.id}}</th>
+                        <td>{{post.user_name}}</td>
+                        <td>{{post.text}}</td>
+                        <td>{{post.created_at}}</td>
+                        <td>{{post.updated_at}}</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+    {% endif %}
+    <p>Back to <a href="/">Home</a></p>
+</div>  
+</body>
+</html>
+
